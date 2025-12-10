@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <title>KaraokePro Manager</title>
+    
+    <!-- iOS Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Karaoke Pro" />
+    
+    <!-- Android/PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme_color" content="#111827" />
+    
+    <!-- Link to Manifest -->
+    <link rel="manifest" href="/metadata.json" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Prevent Pull-to-Refresh on Mobile */
+      body {
+        overscroll-behavior-y: none;
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      input, textarea {
+        -webkit-user-select: text;
+        user-select: text;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+
+      @media print {
+        @page { margin: 0; size: auto; }
+        body { visibility: hidden !important; background: white !important; height: auto !important; overflow: visible !important; }
+        body * { visibility: hidden !important; }
+        #print-section, #print-section * { visibility: visible !important; }
+        #print-section {
+          position: absolute !important;
+          left: 0 !important; top: 0 !important;
+          width: 100% !important; height: auto !important;
+          margin: 0 !important; padding: 5px !important;
+          background: white !important; color: black !important;
+          z-index: 999999 !important;
+          font-family: 'Arial', sans-serif !important;
+          font-size: 12px !important;
+          line-height: 1.2 !important;
+        }
+        .no-print { display: none !important; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://aistudiocdn.com/vite@^7.2.7",
+    "@supabase/supabase-js": "https://aistudiocdn.com/@supabase/supabase-js@^2.87.0",
+    "jszip": "https://aistudiocdn.com/jszip@^3.10.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-900 text-white antialiased h-screen overflow-hidden selection:bg-pink-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
